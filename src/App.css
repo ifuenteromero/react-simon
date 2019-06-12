@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 .page{
   width: 100vw;
   height: 100vh;
@@ -9,35 +10,24 @@
   align-items: center;
 }
 
-
 .square-ext{
   width: 100px;
   height: 100px;
   border-top-left-radius: 100%;
-  border:1px solid black;
   cursor: pointer;
-  
+  position: relative;
+
 }
 
 
-.square-int{
-  background-color: white;
-  width: 50px;
-  height: 50px;
-  border-top-left-radius: 100%;
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  
-}
 .red{
   background-color: red;
- 
+  transform: rotateZ(90deg) translate(0px,-100px);
 }
 
 .blue{
   background-color: blue;
-  transform: rotateZ(90deg);
+  transform: rotateZ(180deg) translate(0px,-100px);
 }
 .yellow{
   background-color: yellow;
@@ -45,5 +35,5 @@
 }
 .green{
   background-color: green;
-  transform:  rotateZ(180deg) translate(200px,-100px);
+  transform:  translate(-300px,0px);
 }
