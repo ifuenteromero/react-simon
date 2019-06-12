@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Button from './components/Button';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,17 +17,17 @@ class App extends React.Component {
   }
   machinePlay() {
     const randomNumber = this.getRandomNumber(4);
-    this.setState(prevState=>{
-      return{
-        machine : prevState.machine.concat(randomNumber)
+    this.setState(prevState => {
+      return {
+        machine: prevState.machine.concat(randomNumber)
       }
     })
   }
-  iluminatedOn(button){
-    
+  iluminatedOn(button) {
+
 
   }
-  
+
 
   handleClick(event) {
     const currentButton = event.currentTarget.id;
@@ -41,31 +42,10 @@ class App extends React.Component {
   render() {
     return (
       <main className="page">
-        <div
-          className="square-ext red"
-          onClick={this.handleClick}
-          id={1}
-
-        >
-        </div>
-        <div
-          className="square-ext blue"
-          onClick={this.handleClick}
-          id={2}
-        >
-        </div>
-        <div
-          className="square-ext yellow"
-          onClick={this.handleClick}
-          id={3}
-        >
-        </div>
-        <div
-          className="square-ext green"
-          onClick={this.handleClick}
-          id={4}
-        >
-        </div>
+        <Button handleClick={this.handleClick} color="red" id={1} />
+        <Button handleClick={this.handleClick} color="blue" id={2} />
+        <Button handleClick={this.handleClick} color="yellow" id={3} />
+        <Button handleClick={this.handleClick} color="green" id={4} />
         <button
           type="button"
           onClick={this.machinePlay}

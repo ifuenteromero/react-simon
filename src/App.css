@@ -10,30 +10,6 @@
   align-items: center;
 }
 
-.square-ext{
-  width: 100px;
-  height: 100px;
-  border-top-left-radius: 100%;
-  cursor: pointer;
-  position: relative;
-  opacity :0.5;
-}
 
 
-.red{
-  background-color: red;
-  transform: rotateZ(90deg) translate(0px,-100px);
-}
 
-.blue{
-  background-color: blue;
-  transform: rotateZ(180deg) translate(0px,-100px);
-}
-.yellow{
-  background-color: yellow;
-  transform:  rotateZ(-90deg) translate(-100px,-200px);  
-}
-.green{
-  background-color: green;
-  transform:  translate(-300px,0px);
-}
