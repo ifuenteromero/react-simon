@@ -5,10 +5,21 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-
+    this.state={
+      machine : [],
+      player : []
+    }
   }
+
   handleClick(event) {
-    console.log(event.currentTarget.id)
+    const currentButton = event.currentTarget.id;
+    this.setState(prevState=>{
+    
+      return{
+        player : prevState.player.concat(currentButton)
+      }
+    })
+   
   }
 
   render() {
