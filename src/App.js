@@ -5,21 +5,37 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.state={
-      machine : [],
-      player : []
+    this.machinePlay = this.machinePlay.bind(this);
+    this.state = {
+      machine: [],
+      player: []
     }
   }
+  getRandomNumber(max) {
+    return Math.ceil(Math.random() * max);
+  }
+  machinePlay() {
+    const randomNumber = this.getRandomNumber(4);
+    this.setState(prevState=>{
+      return{
+        machine : prevState.machine.concat(randomNumber)
+      }
+    })
+  }
+  iluminatedOn(button){
+    
+
+  }
+  
 
   handleClick(event) {
     const currentButton = event.currentTarget.id;
-    this.setState(prevState=>{
-    
-      return{
-        player : prevState.player.concat(currentButton)
+    this.setState(prevState => {
+      return {
+        player: prevState.player.concat(currentButton)
       }
     })
-   
+
   }
 
   render() {
@@ -44,13 +60,18 @@ class App extends React.Component {
           id={3}
         >
         </div>
-         <div
+        <div
           className="square-ext green"
           onClick={this.handleClick}
           id={4}
         >
         </div>
+        <button
+          type="button"
+          onClick={this.machinePlay}
+        >Comenzar</button>
       </main >
+
     );
   }
 }
